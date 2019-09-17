@@ -13,7 +13,9 @@ git submodule update
 
 pushd libsodium
 
-git fetch && git checkout stable
-git reset --hard origin/stable
+#git fetch && git checkout stable
+#git reset --hard origin/stable
+git fetch && git checkout public-pbkdf2
+git reset --hard origin/public-pbkdf2
 git pull
 popd
