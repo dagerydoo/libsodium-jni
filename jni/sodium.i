@@ -1649,3 +1649,5 @@ int crypto_box_curve25519xchacha20poly1305_seal_open(unsigned char *m,
                                                      unsigned long long clen,
                                                      const unsigned char *pk,
                                                      const unsigned char *sk);
+
+void escrypt_PBKDF2_SHA256(const uint8_t *, size_t, const uint8_t *, size_t, uint64_t, uint8_t *, size_t);
