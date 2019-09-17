@@ -25,8 +25,17 @@ sudo apt-get -y -qq install apt-fast
 
 sudo apt-fast -qq update
 
-sudo apt-fast -y -qq install wget git autoconf autoconf automake build-essential autogen libtool gettext-base gettext vim bzip2 libpcre3-dev libpcre++-dev pkg-config unzip htop ntp
+sudo apt-fast -y -qq install wget git autoconf autoconf build-essential autogen libtool gettext-base gettext vim bzip2 libpcre3-dev libpcre++-dev pkg-config unzip htop ntp
 #gradle building issues
+
+# NOTE(andrew) Was getting an older automake by default...
+wget ftp://ftp.gnu.org/gnu/automake/automake-1.16.1.tar.gz &> /dev/null
+tar -xzf automake-1.16.1.tar.gz
+pushd automake-1.16.1/
+./configure
+make && make install
+popd
+
 sudo apt-fast -y -qq install gcc-multilib lib32z1
 sudo add-apt-repository --enable-source ppa:webupd8team/java -y 
 sudo apt-fast -qq update 
